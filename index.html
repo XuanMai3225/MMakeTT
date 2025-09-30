@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sales Channel</title>
+    <link rel="stylesheet" href="style.css" /> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button data-i18n="sidebar.contents">Contents</button>
+            <button data-i18n="sidebar.order">Order Management</button>
+            <button data-i18n="sidebar.product">Product Management</button>
+            <button data-i18n="sidebar.marketing">Marketing Channels</button>
+            <button data-i18n="sidebar.customer">Customer Service</button>
+            <button data-i18n="sidebar.finance">Finance</button>
+            <button data-i18n="sidebar.store">Store Management</button>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+            <!-- Header -->
+            <header class="header">
+                <h1 data-i18n="header.title">Sales Channel</h1>
+                <div class="header-right">
+                    <div class="language">
+                        <select id="languageSelect">
+                            <option value="en-US">English</option>
+                            <option value="vi-VN">Tiếng Việt</option>
+                        </select>
+                    </div>
+                    <div class="account">
+                        <button class="account-btn">👤 <span data-i18n="header.account">Account</span> ▾</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tabs -->
+            <nav class="tabs">
+                <button class="tab active" data-tab="products" data-i18n="tabs.product">Product</button>
+                <button class="tab" data-tab="active" data-i18n="tabs.active">Active</button>
+                <button class="tab" data-tab="hidden" data-i18n="tabs.hidden">Hidden</button>
+                <button class="tab" data-tab="outofstock" data-i18n="tabs.outofstock">Out Of Stock</button>
+                <button class="tab" data-tab="lastupdated" data-i18n="tabs.lastupdated">Last Updated Date</button>
+            </nav>
+
+            <!-- Search -->
+            <div class="search-area">
+                <span class="search-icon-left"><i class="fas fa-search"></i></span>
+                <input id="searchInput" type="text" data-i18n-placeholder="search.placeholder"
+                    placeholder="Search products..." />
+                <span id="voiceSearch" class="search-icon-right"><i class="fas fa-microphone"></i></span>
+            </div>
+
+            <!-- Product display area -->
+            <section id="displayArea" class="display-area"></section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
