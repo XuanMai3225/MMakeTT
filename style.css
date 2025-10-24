@@ -1,59 +1,250 @@
-/* GLOBAL */ 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; } 
-html,body { height: 100%; background: #fff; }
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-/* LAYOUT */ 
-.container { display: flex; height: 100vh; }
+html, body {
+  height: 100%;
+  background: #fff;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  height: 100vh;
+}
 
 /* SIDEBAR */
-/* --- GIỮ NGUYÊN MÀU SẮC nhưng thu lại width một chút như bạn yêu cầu --- */
-.sidebar { width: 160px; /* <-- giảm từ 220px xuống để 'thu lại' */ 
-  background: linear-gradient(to bottom, #f6b2a1, #f5cba7); padding: 18px; }
-.sidebar button { display: block; width: 100%; margin: 10px 0; padding: 12px; border: none; border-radius: 10px; background: rgba(255,255,255,0.22); color: #fff; text-align: left; cursor: pointer; }
+.sidebar {
+  width: 220px;
+  background: linear-gradient(to bottom, #f6b2a1, #f5cba7);
+  padding: 18px;
+}
 
-/* MAIN */ 
-.main { flex: 1; display: flex; flex-direction: column; }
+.sidebar button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
 /* HEADER */
-/* --- Kéo rộng thanh header (Sales Channel) bằng padding trái/phải lớn hơn --- */
-.header { background: linear-gradient(90deg,#ff85ac 0%, #ffbf63 100%); color: #fff; padding: 18px 60px; position: relative; display: flex; justify-content: center; align-items: center; } 
-.header h1 { font-size: 30px; font-weight: 700; } 
-.header-right { position: absolute; right: 30px; display: flex; align-items: center; gap: 12px; } 
-.language select { padding: 6px 10px; border-radius: 8px; border: none; font-size: 14px; cursor: pointer; } 
-.account-btn { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.9); padding: 6px 14px; border-radius: 22px; cursor: pointer; }
+.header {
+  background: linear-gradient(90deg,#ff85ac 0%, #ffbf63 100%);
+  color: #fff;
+  padding: 18px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* TABS */ 
-.tabs { display: flex; background: #fff; border-bottom: 1px solid #e6e6e6; } 
-.tab { flex: 1; padding: 12px 16px; border: none; background: #f6f6f6; cursor: pointer; font-weight: 600; text-align: center; color: #222; } 
-.tab.active { background: #fff; border-bottom: 3px solid #ff9800; }
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
 
-/* SEARCH */ 
-.search-area { position: relative; padding: 12px 20px; background: #fff; border-bottom: 1px solid #eee; } 
-.search-area input { width: 100%; padding: 10px 36px; border-radius: 25px; border: 1px solid #ddd; font-size: 15px; } 
-.search-area input:focus { outline: none; border-color: #ff9800; box-shadow: 0 0 4px rgba(255,152,0,0.4); } 
-.search-icon-left, .search-icon-right { position: absolute; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888; cursor: pointer; } 
-.search-icon-left { left: 32px; } 
-.search-icon-right { right: 32px; }
+.header-right {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-/* DISPLAY / PRODUCT CARDS */ 
-.display-area { padding: 18px; display: flex; flex-wrap: wrap; gap: 18px; overflow-y: auto; } 
-.product-card { width: 220px; background: #fff; border-radius: 10px; border: 1px solid #e4e4e4; box-shadow: 0 2px 6px rgba(0,0,0,0.06); padding: 14px; position: relative; } 
-.product-card .image-box { height: 120px; border-radius: 8px; background: #f2f2f2; display:flex; align-items:center; justify-content:center; color:#777; margin-bottom:10px; position: relative; } 
-.product-card input { width: 100%; padding: 8px; margin: 6px 0; border-radius: 6px; border: 1px solid #d0d0d0; } 
-.actions { display: flex; gap: 6px; margin-top: 8px; } 
-.actions button { flex:1; padding:6px 8px; border-radius:6px; border:none; color:#fff; cursor:pointer; font-size:13px; } 
-.actions .save { background:#28a745; } 
-.actions .hide { background:#007bff; } 
-.actions .unhide { background:#ff9800; } 
+.language select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.account-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.9);
+  padding: 6px 14px;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: #f6f6f6;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  color: #222;
+}
+
+.tab.active {
+  background: #fff;
+  border-bottom: 3px solid #ff9800;
+}
+
+/* SEARCH */
+.search-area {
+  position: relative;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.search-area input {
+  width: 100%;
+  padding: 10px 36px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.search-area input:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 4px rgba(255,152,0,0.4);
+}
+
+.search-icon-left,
+.search-icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+}
+
+.search-icon-left {
+  left: 32px;
+}
+
+.search-icon-right {
+  right: 32px;
+}
+
+/* DISPLAY / PRODUCT CARDS */
+.display-area {
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+.product-card {
+  width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  padding: 14px;
+  position: relative;
+}
+
+.product-card .image-box {
+  height: 120px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+  margin-bottom:10px;
+  position: relative;
+}
+
+.product-card input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.actions button {
+  flex:1;
+  padding:6px 8px;
+  border-radius:6px;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.actions .save { background:#28a745; }
+.actions .hide { background:#007bff; }
+.actions .unhide { background:#ff9800; }
 .actions .delete { background:#dc3545; }
 
-/* ADD CARD */ 
-.add-card { width: 220px; height: 300px; border: 2px dashed #ddd; border-radius: 10px; display:flex;flex-direction:column;justify-content:center;align-items:center; color:#bbb; cursor:pointer; } 
-.add-card span { font-size:32px; margin-bottom:6px; }
+/* ADD CARD */
+.add-card {
+  width: 220px;
+  height: 300px;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#bbb;
+  cursor:pointer;
+}
 
-/* LAST UPDATED */ 
-.last-updated { font-size: 12px; color: #555; margin-top: 4px; text-align: right; } 
-.product-status { font-size: 12px; color: #ff9800; text-align: right; margin-bottom: 4px; }
+.add-card span {
+  font-size:32px;
+  margin-bottom:6px;
+}
+
+/* LAST UPDATED */
+.last-updated {
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.product-status {
+  font-size: 12px;
+  color: #ff9800;
+  text-align: right;
+  margin-bottom: 4px;
+}
 
 /* SOLD OUT OVERLAY (Out Of Stock UI) */
 .sold-overlay {
@@ -69,11 +260,56 @@ html,body { height: 100%; background: #fff; }
   font-size: 14px;
   pointer-events: none;
 }
-.product-card.soldout .image-box .sold-overlay { display: block; }
-.product-card .image-box .sold-overlay { display: none; }
 
-/* Microphone active effect */ 
-#voiceSearch.listening i { color: red; }
+.product-card.soldout .image-box::after {
+  display: none;
+}
+
+.product-card.soldout .image-box .sold-overlay {
+  display: block;
+}
+
+.product-card .image-box .sold-overlay {
+  display: none;
+}
+
+/* Microphone active effect */
+#voiceSearch.listening i {
+  color: red;
+}
+
+/* ---------- THÊM CHỨC NĂNG MŨI TÊN SIDEBAR ---------- */
+.side-arrow {
+  font-size: 16px;
+  margin-left: 8px;
+  transition: transform 0.25s ease;
+}
+
+/* when button has .side-open we'll show down arrow via innerHTML (JS toggles char) */
+/* Also rotate any existing .arrow-icon if needed */
+.sidebar button .arrow-icon {
+  transition: transform 0.25s ease;
+}
+.sidebar button.side-open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
